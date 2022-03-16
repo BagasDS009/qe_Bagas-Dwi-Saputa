@@ -1,0 +1,87 @@
+package starter;
+
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
+
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+        plugin = {"pretty"},
+        features = "src/test/resources/features"
+)
+public class CucumberTestSuite {
+}
+
+
+
+----------------------------------------
+
+Feature: Login
+  As a user
+  I want to se my home page
+  So that I can update my profile
+
+  Scenario: As user i have able to success login
+    Given I as on the login page
+    When I enter my username and password correctly
+    And I click login button
+    Then I am on the home pageFeature: Login
+
+--------------------------------------------
+package starter.stepdefinitions;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import net.thucydides.core.annotations.Steps;
+import starter.login.Login;
+
+
+public class LoginStep {
+    @Steps
+    Login login;
+
+    @Given("I as on the login page")
+    public void onTheLoginPage() {
+        login.onTheLoginPage();
+    }
+    @When("I enter my username and password correctly")
+    public void enterUsernameAndPassword() {
+        login.enterUsernameAndPassword();
+    }
+    @And("I click login button")
+    public void clickLoginButton() {
+        login.clickLoginButton();
+    }
+    @Then("I am on the home page")
+    public void onTheHomePage(){
+        login.onTheHomePage();
+    }
+}
+
+----------------------------
+
+package starter.login;
+
+import net.thucydides.core.annotations.Step;
+
+public class Login {
+
+    @Step("I as on the login page")
+    public void onTheLoginPage() {
+        System.out.println("I as on the login page");
+    }
+    @Step("I enter my username and password correctly")
+    public void enterUsernameAndPassword() {
+        System.out.println("I enter my username and password correctly");
+    }
+    @Step("I click login button")
+    public void clickLoginButton() {
+        System.out.println("I click login button");
+    }
+    @Step("I am on the home page")
+    public void onTheHomePage(){
+        System.out.println("I am on the home page");
+    }
+}
