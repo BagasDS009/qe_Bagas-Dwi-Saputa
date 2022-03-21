@@ -13,19 +13,19 @@ public class LoginStep {
     Login login;
 
     @Given("I as on the login page")
-    public void onTheLoginPage() {
+    public void on_The_Login_Page() {
         login.onTheLoginPage();
     }
     @When("I enter my username and password correctly")
-    public void enterUsernameAndPassword() {
+    public void enter_User_name_And_Password() {
         login.enterUsernameAndPassword();
     }
     @And("I click login button")
-    public void clickLoginButton() {
+    public void click_Login_Button() {
         login.clickLoginButton();
     }
     @Then("I am on the home page")
-    public void onTheHomePage(){
+    public void on_The_Home_Page(){
         login.onTheHomePage();
     }
 }

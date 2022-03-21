@@ -9,8 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>2.1.13</serenity.version>
         <serenity.maven.version>2.1.13</serenity.maven.version>
@@ -19,7 +17,6 @@
         <encoding>UTF-8</encoding>
         <parallel.tests>4</parallel.tests>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -116,7 +113,6 @@
                         <include>**/When*.java</include>
                     </includes>
                     <systemPropertyVariables>
-                        <!--suppress UnresolvedMavenProperty -->
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>
                     <parallel>classes</parallel>
@@ -146,7 +142,6 @@
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.maven.version}</version>
                 <configuration>
-                    <!--suppress UnresolvedMavenProperty -->
                     <tags>${tags}</tags>
                 </configuration>
                 <dependencies>
